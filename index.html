@@ -6,7 +6,9 @@
   <title>新疆十五日自驾 · 高德地图版</title>
   <script>
     window._AMapSecurityConfig = {
-      serviceHost: "https://amap-proxy.zwx2997877399.workers.dev/_AMapService"
+      serviceHost: location.hostname === "faintlight4215.github.io"
+        ? "https://amap-proxy.zwx2997877399.workers.dev/_AMapService"
+        : "/_AMapService"
     };
   </script>
   <script src="https://webapi.amap.com/maps?v=2.0&key=4ae4d1d2d3642d793995b75648664cca&plugin=AMap.Driving,AMap.Scale,AMap.ToolBar"></script>
