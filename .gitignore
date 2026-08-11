@@ -1,0 +1,10 @@
+# Local-only secrets and map configuration
+amap-config.js
+.env
+.env.*
+!.env.example
+
+# Local tooling
+.DS_Store
+Thumbs.db
+*.log

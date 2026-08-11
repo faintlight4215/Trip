@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>新疆十五日自驾 · GitHub 安全公开版</title>
+  <script>
+  // GitHub Pages 安全公开版：不包含高德 Key 或安全密钥。
+  window.AMap={
+    Map:class{constructor(id){const e=document.getElementById(id);e.innerHTML='<div style="height:100%;display:grid;place-items:center;padding:32px;text-align:center;color:#6b756f"><div><b style="color:#2e6657;font-size:20px">公开版未加载内嵌地图</b><br>为避免泄露高德凭证，地图 Key 未上传 GitHub。每日攻略、路线顺序和导航信息仍可正常查看。</div></div>'}addControl(){}add(){}remove(){}setFitView(){}},
+    Scale:class{},ToolBar:class{},InfoWindow:class{open(){}setContent(){}},
+    Marker:class{on(){}},Pixel:class{},LngLat:class{},Polyline:class{},
+    Driving:class{search(a,b,c,cb){cb('error',{})}clear(){}}
+  };
+  </script>
+  <style>
+    :root{--ink:#26332f;--muted:#6b756f;--paper:#f4efe4;--card:#fffdf7;--jade:#2e6657;--gold:#c58b3b;--red:#a94b3f;--line:#d9cfbd;--shadow:0 18px 45px rgba(56,45,30,.13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#dcd4c7;color:var(--ink);font-family:"Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.65}
+    .page{width:min(1180px,calc(100% - 32px));min-height:680px;margin:24px auto;background:var(--paper);box-shadow:var(--shadow);border-radius:4px;overflow:hidden;position:relative}
+    .hero{min-height:680px;padding:72px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(120deg,rgba(23,48,43,.96),rgba(47,91,75,.78)),radial-gradient(circle at 76% 20%,#d7a04f 0 2%,transparent 2.3%),#24493f;color:#fff}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 48%,rgba(255,255,255,.08) 48.2% 49%,transparent 49.2%),linear-gradient(25deg,transparent 62%,rgba(197,139,59,.35) 62.2% 63%,transparent 63.2%);pointer-events:none}
+    .kicker{letter-spacing:.28em;text-transform:uppercase;color:#f3c679;font-weight:700;font-size:13px}.hero h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(48px,8vw,92px);line-height:1.04;margin:14px 0 18px;max-width:850px}.hero p{font-size:20px;max-width:760px;color:#e9eee9}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.chip{border:1px solid rgba(255,255,255,.38);padding:7px 12px;border-radius:99px;font-size:13px;background:rgba(255,255,255,.08)}
+    .section{padding:54px 60px}.section h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:34px;margin:0 0 8px}.lead{color:var(--muted);margin:0 0 30px}.route{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.stop{background:var(--card);padding:15px;border:1px solid var(--line);border-radius:8px;min-height:92px}.stop b{display:block;color:var(--jade);font-size:16px}.stop small{color:var(--muted)}
+    .days{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.day{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--jade);padding:18px 20px;border-radius:8px;position:relative}.day.locked{border-left-color:var(--red)}.day h3{margin:0 0 5px;font-size:18px}.date{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.08em}.day p{margin:7px 0;color:#48534e}.tag{font-size:11px;padding:3px 8px;border-radius:99px;background:#e7efe9;color:var(--jade);font-weight:700}.locked .tag{background:#f5e4df;color:var(--red)}
+    .notice{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.note{padding:20px;background:var(--card);border:1px solid var(--line);border-radius:8px}.note b{color:var(--red)}.foot{padding:20px 60px 36px;color:var(--muted);font-size:12px}.draft{position:absolute;right:28px;top:25px;border:2px solid rgba(255,255,255,.6);padding:8px 14px;transform:rotate(4deg);font-weight:800;letter-spacing:.12em}
+    #routeMap{height:500px;border-radius:12px;border:1px solid var(--line);background:#e8e4da}.map-tabs{display:flex;gap:7px;overflow-x:auto;padding:2px 0 14px}.map-tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 11px;border-radius:99px;white-space:nowrap;cursor:pointer}.map-tabs button.active{background:var(--jade);color:#fff;border-color:var(--jade)}.map-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:13px;color:var(--muted);font-size:12px}.map-meta span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.confirmed:before{background:var(--jade)}.approx:before{background:var(--gold)}.suggested:before{background:var(--red)}.amap-marker-label{border:0!important;background:rgba(255,253,247,.96)!important;border-radius:5px!important;box-shadow:0 2px 8px rgba(0,0,0,.16)!important;padding:3px 6px!important;color:var(--ink)!important;font-size:11px!important}.cn-map-pin{width:25px;height:25px;border:2px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800}.map-stats{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}.map-stats strong{color:var(--jade);font-size:18px}.map-stats .route-order{margin-top:7px;color:#48534e}.map-stats small{display:block;color:var(--muted);margin-top:6px}
+    .ticket-table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px}.ticket-table th,.ticket-table td{padding:12px;border:1px solid var(--line);vertical-align:top;text-align:left}.ticket-table th{background:#e8eee8;color:var(--jade)}.ai-label{display:inline-block;background:#f5e4df;color:var(--red);padding:2px 7px;border-radius:99px;font-size:10px;font-weight:800;margin-right:5px}
+    .timeline{display:grid;gap:0;margin:24px 0}.slot{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}.slot time{color:var(--gold);font-weight:800}.slot h3{margin:0 0 4px;font-size:17px}.slot p{margin:0;color:#48534e}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.detail-card{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:18px}.detail-card h3{margin:0 0 8px;color:var(--jade)}.detail-card p,.detail-card ul{margin:6px 0;color:#48534e}.source-note{font-size:11px;color:var(--muted);margin-top:10px}.status-ok{color:var(--jade);font-weight:800}.status-warn{color:var(--red);font-weight:800}
+    @media(max-width:820px){.page{width:100%;margin:0;border-radius:0}.hero,.section{padding:36px 24px}.route{grid-template-columns:repeat(2,1fr)}.days,.notice,.detail-grid{grid-template-columns:1fr}.slot{grid-template-columns:72px 1fr}}
+    @media print{body{background:#fff}.page{width:100%;margin:0;box-shadow:none;break-after:page}.hero{height:100vh}}
+  </style>
+</head>
+<body>
+  <section class="page hero">
+    <div class="draft">GitHub 安全公开版</div>
+    <div class="kicker">Xinjiang · Self-drive Journey</div>
+    <h1>沿天山向帕米尔<br>新疆十五日自驾</h1>
+    <p>从乌鲁木齐穿越伊犁草原与独库公路，再沿南疆抵达喀什和塔什库尔干。保留原始路线，以两名司机轮换完成长距离移动。</p>
+    <div class="chips"><span class="chip">2026.08.21—09.04</span><span class="chip">4 人</span><span class="chip">2 名司机</span><span class="chip">15 天</span><span class="chip">乌鲁木齐机场取车</span><span class="chip">喀什机场还车</span></div>
+  </section>
+
+  <section class="page section" id="day1-detail" style="display:none">
+    <div class="kicker" style="color:var(--gold)">Day 01 · Detailed Sample</div><h2>D1 乌鲁木齐抵达日｜可执行攻略</h2>
+    <p class="lead">2026 年 8 月 21 日（周五）· 18:45 落地。当天核心不是“多打卡”，而是顺利取车、吃到第一顿新疆特色并保证次日早出发。地图中的实时公里数与纯驾驶时间，请点击上方 D1 查看。</p>
+    <div class="timeline">
+      <div class="slot"><time>18:45</time><div><h3>抵达乌鲁木齐机场</h3><p>下机、取行李、联系租车方。四人分工：1 人联系门店、1 人核对行李，驾驶员共同验车。拍车身四角、轮胎、油表/电量、里程和随车工具。</p></div></div>
+      <div class="slot"><time>19:35–20:05</time><div><h3>预计完成取车</h3><p>导航目的地先设“新疆国际大巴扎停车场”。若实际取车晚于 20:15，直接执行下方“晚点方案”，不为打卡压缩睡眠。</p></div></div>
+      <div class="slot"><time>20:30–21:15</time><div><h3>新疆国际大巴扎｜外观与街区</h3><p>以夜景、建筑外观和短距离步行为主。停车位与临时交通组织以高德当天提示为准；贵重物品不要留在车内。</p></div></div>
+      <div class="slot"><time>21:20–22:20</time><div><h3>和田二街｜晚餐</h3><p>把它作为“多样少量”的新疆小吃首餐：烤包子、抓饭、烤肉、鸽子汤可分食。周五晚间可能拥挤，先看队伍再决定，不为单店排队超过约 25 分钟。</p></div></div>
+      <div class="slot"><time>22:35–23:00</time><div><h3>入住雅丽雅酒店（红山公园店）</h3><p>地址：沙依巴克区红山揽秀园西街 69 号。办理入住时确认停车位置、次日车辆能否直接驶出；整理 D2 途中饮水和零食。</p></div></div>
+      <div class="slot"><time>23:15</time><div><h3>建议熄灯</h3><p>D2 是长距离移动日，07:00 前出发；两名司机提前约定首段驾驶与约 2 小时轮换节奏。</p></div></div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-card"><h3>吃什么｜公开攻略交叉整理</h3><p><b>优先尝试：</b>吐达洪馕坑架子肉烤肉王（馕坑肉/烤肉）、和谐鸽子汤（鸽子汤）、塔希娜美食（新疆家常风味）。</p><p><b>顺路小吃：</b>烤包子、无花果抓饭、酸奶粽子或时令水果。具体摊位以现场营业和排队为准。</p><p><b>选择规则：</b>四人可分食 3–4 样；若热门店排队超过 25 分钟，换同街同品类评价稳定且明码标价的店。</p><div class="source-note">名称来自公开旅行资料与本地美食街攻略线索；尚未完成大众点评登录态下的营业时间/休息日复核，因此暂不标“已核实餐厅”。</div></div>
+      <div class="detail-card"><h3>晚点止损方案</h3><p><b>20:15 后才取到车：</b>取消大巴扎内部游览，只保留外观或直接去和田二街。</p><p><b>21:30 后才离开机场：</b>大巴扎与和田二街二选一，优先正常吃饭，然后入住。</p><p><b>23:00 后：</b>直接酒店；沿途选择仍营业、停车方便的牛肉面/抓饭，不补打卡。</p></div>
+      <div class="detail-card"><h3>停车与导航</h3><p><span class="status-ok">酒店已确认</span>：雅丽雅酒店（红山公园店）。酒店页面显示距离红山公园客运站约 1.9 公里，但停车位仍须入住前电话确认。</p><p>导航顺序按原方案：机场 → 大巴扎 → 和田二街 → 酒店。高德显示的是道路规划值，不含取车、找车位、步行和排队。</p></div>
+      <div class="detail-card"><h3>无人机</h3><p><span class="status-warn">D1 不安排起飞。</span>机场周边、大巴扎等市区人群密集地带风险高；即使 App 显示可起飞，也需同时满足实名登记、当地临时空域限制和景区现场规则。</p><p>出发当天再次查看官方无人机运行/临时管制信息。后续自然景区逐日给出“可飞、需报备、禁飞、待现场确认”标签。</p></div>
+      <div class="detail-card"><h3>海拔与气温</h3><p><b>路线海拔：</b>乌鲁木齐市区约 800–900 米；住宿地约 850 米。</p><p><b>同期常见：</b>约 18–30℃，日照强、昼夜温差明显。</p><p><span class="status-warn">预报状态：</span>已进入 8–15 天趋势窗口，但仍属低置信度；出发前 5 天、前 48 小时各刷新一次。</p></div>
+    </div>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Interactive Route Map</div><h2>每日参考地图</h2>
+    <p class="lead">高德中文底图与驾车道路规划。黄色点为大致位置，后续将核实到景区入口或停车场；实时执行仍以手机高德导航为准。</p>
+    <div class="map-tabs" id="mapTabs"></div>
+    <div id="routeMap"></div>
+    <div class="map-stats" id="mapStats">正在获取高德驾车里程与时间…</div>
+    <div class="map-meta"><span class="confirmed">已确认/可靠地图实体</span><span class="approx">大致位置待精确</span><span class="suggested">AI住宿建议·未预订</span></div>
+    <div id="dayGuide" style="margin-top:34px"></div>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Route Overview</div><h2>路线总览</h2>
+    <p class="lead">过夜驻点全部登记；返程日计入喀什行程天数。后续版本将加入地图、里程、酒店及图片。</p>
+    <div class="route">
+      <div class="stop"><b>01 乌鲁木齐</b><small>抵达 · 大巴扎</small></div><div class="stop"><b>02 赛里木湖</b><small>安集海 · 环湖</small></div>
+      <div class="stop"><b>03 伊宁</b><small>果子沟 · 市区</small></div><div class="stop"><b>04 昭苏</b><small>伊昭公路</small></div>
+      <div class="stop"><b>05 特克斯</b><small>夏塔之后入住</small></div><div class="stop"><b>06 那拉提</b><small>草原游览</small></div>
+      <div class="stop"><b>07 巴音布鲁克</b><small>九曲十八弯</small></div><div class="stop"><b>08 库车</b><small>独库南段</small></div>
+      <div class="stop"><b>09 喀什</b><small>古城 · 大巴扎</small></div><div class="stop"><b>10 塔县</b><small>帕米尔高原</small></div>
+      <div class="stop"><b>11 喀什</b><small>N39 沙漠 · 返程</small></div>
+    </div>
+    <div class="notice" style="margin-top:28px"><div class="note"><b>高强度锁定日</b><br>D2、D5、D9 保留原计划，并加入司机轮换与超时止损。</div><div class="note"><b>证件与道路</b><br>塔县段提前办边境通行证；独库、伊昭公路当天复查管制。</div></div>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Tickets & Booking</div><h2>门票与预约</h2>
+    <p class="lead">以下为当前预约节奏和参考价；最终价格以官方小程序下单页为准。</p>
+    <table class="ticket-table"><thead><tr><th>景区</th><th>参考费用</th><th>建议提前</th><th>行动</th></tr></thead><tbody>
+      <tr><td>赛里木湖</td><td>旺季门票约 ¥70/人；区间车约 ¥75/人；自驾票另计</td><td><b>3–7天</b></td><td>“一部手机游赛湖”抢自驾名额</td></tr>
+      <tr><td>夏塔旅游景区</td><td>组合票常见约 ¥100/人，内容以下单页为准</td><td><b>3–7天</b></td><td>D5 尽量订首批入园；18:00左右停止售票</td></tr>
+      <tr><td>那拉提</td><td>基础门票参考 ¥95/人；区间车/自驾票另购</td><td><b>开放未来7日即抢</b></td><td>官方“智游那拉提”；自驾业务仅线上预约</td></tr>
+      <tr><td>巴音布鲁克</td><td>常见门票约 ¥65＋区间车约 ¥75/人</td><td><b>3–7天</b></td><td>优先核实落日场末班区间车</td></tr>
+      <tr><td>温宿大峡谷</td><td>常见门票约 ¥40/人；景交/车辆另计</td><td><b>1–3天</b></td><td>D9 重点核实最早入园和车辆规则</td></tr>
+      <tr><td>白沙湖 / 喀拉库勒湖</td><td>常见约 ¥40 / ¥45 每人</td><td><b>提前1天</b></td><td>与帕米尔线路及边境证件一起检查</td></tr>
+      <tr><td>慕士塔格冰川公园</td><td>门票＋区间车近期常见约 ¥90–100/人</td><td><b>1–3天</b></td><td>高海拔，预留景交与徒步时间</td></tr>
+      <tr><td>喀什古城</td><td>街区通常免费</td><td>无需抢普通门票</td><td>临近确认开城仪式时间</td></tr>
+      <tr><td>N39 沙漠</td><td>运营商项目套餐，无统一票价</td><td><b>3–7天</b></td><td>确认车辆、保险、项目和返程时间</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Days 01—08</div><h2>北疆与独库南下</h2><p class="lead">红色边线表示高强度锁定日。</p>
+    <div class="days">
+      <article class="day"><div class="date">D1 · 8/21 周五</div><h3>南昌 → 乌鲁木齐</h3><p>18:45 抵达，机场取车；大巴扎与和田二街后入住雅丽雅酒店（红山公园店），地址：红山揽秀园西街69号。</p><span class="tag">PARTIAL</span></article>
+      <article class="day locked"><div class="date">D2 · 8/22 周六</div><h3>乌鲁木齐 → 安集海 → 赛里木湖</h3><p>07:00 前出发；两司机约每 2 小时轮换。入住茜茜栖里民宿（赛里木湖东门游客中心店）。</p><span class="tag">LOCKED · 高强度</span></article>
+      <article class="day"><div class="date">D3 · 8/23 周日</div><h3>赛里木湖 → 果子沟 → 伊宁</h3><p>下午约 16:00 离开；若延误，取消晚间逛街以保证休息。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D4 · 8/24 周一</div><h3>伊宁 → 伊昭公路 → 昭苏</h3><p>上午伊宁市区，午饭后走伊昭公路，目标天黑前抵达。</p><span class="tag">PARTIAL</span></article>
+      <article class="day locked"><div class="date">D5 · 8/25 周二</div><h3>昭苏 → 夏塔 → 特克斯</h3><p>保留原方案；须设置夏塔离场截止时间，不以疲劳夜驾补进度。</p><span class="tag">LOCKED · 高强度</span></article>
+      <article class="day"><div class="date">D6 · 8/26 周三</div><h3>特克斯 → 那拉提</h3><p>07:00 出发，下午按实际抵达时间选择草原项目。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D7 · 8/27 周四</div><h3>那拉提 → 巴音布鲁克</h3><p>落日与“九个太阳”依赖天气和入园时间，不作为必然结果。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D8 · 8/28 周五</div><h3>独库公路南段 → 库车</h3><p>道路管制优先；抵达延误时压缩库车下午活动。</p><span class="tag">PARTIAL</span></article>
+    </div>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Days 09—15</div><h2>南疆与帕米尔</h2><p class="lead">D9 按用户确认保留原方案，作为全程最高负荷驾驶日管理。</p>
+    <div class="days">
+      <article class="day locked"><div class="date">D9 · 8/29 周六</div><h3>库车 → 温宿峡谷 → 阿克苏 → 喀什</h3><p>原方案保留。两司机强制轮换，设置峡谷离场时间；安全状态不满足时立即停车休息。</p><span class="tag">LOCKED · 极高强度</span></article>
+      <article class="day"><div class="date">D10 · 8/30 周日</div><h3>喀什深度游</h3><p>古城与牛羊大巴扎；作为连续长途驾驶后的恢复日。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D11 · 8/31 周一</div><h3>喀什 → 白沙湖 → 喀湖 → 塔县</h3><p>进入高海拔区域，降低活动强度并提前完成边境通行证。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D12 · 9/1 周二</div><h3>塔县环线</h3><p>托格伦夏村日出、盘龙古道、塔莎古道、班迪尔蓝湖；两处模糊地名均已确认。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D13 · 9/2 周三</div><h3>塔县 → 湿地与冰川 → 喀什</h3><p>塔合曼湿地、慕士塔格冰川、奥依塔克红山谷，按入场时间止损。</p><span class="tag">PARTIAL</span></article>
+      <article class="day"><div class="date">D14 · 9/3 周四</div><h3>N39 塔克拉玛干沙漠</h3><p>运营方、集合点、车辆条件及返程时间将在下一阶段核实。</p><span class="tag">PARTIAL</span></article>
+      <article class="day locked"><div class="date">D15 · 9/4 周五</div><h3>喀什 → 南昌</h3><p>喀什机场还车后搭乘 07:40 航班；加油、验车、还车与值机需统一倒推。</p><span class="tag">LOCKED</span></article>
+    </div>
+  </section>
+
+  <section class="page section">
+    <div class="kicker" style="color:var(--gold)">Before Next Version</div><h2>下一版将补充</h2>
+    <div class="notice">
+      <div class="note"><b>地图与坐标</b><br>每日行车线路、景点坐标、停车点、加油与补给节点。</div>
+      <div class="note"><b>景区事实</b><br>开放时间、票价、预约、最晚入场与道路实时规则。</div>
+      <div class="note"><b>餐饮住宿</b><br><span class="ai-label">AI建议</span>未订酒店将按停车、早出和路线顺畅度给候选；每天三餐随后补齐。</div>
+      <div class="note"><b>图片与 PDF</b><br>完成图片来源台账后加入实景图片，再由浏览器导出正式 PDF。</div>
+    </div>
+    <p class="lead" style="margin-top:32px">这是用于确认信息层级和视觉方向的 T1 预览，不是最终可执行攻略。</p>
+  </section>
+  <footer class="foot">新疆十五日自驾 · GitHub Pages Edition · Updated 2026-08-11</footer>
+  <script>
+  const ROUTES=[
+    {d:1,n:'抵达乌鲁木齐',p:[['乌鲁木齐机场',43.9071,87.4742,'confirmed'],['新疆国际大巴扎',43.7774,87.6168,'confirmed'],['和田二街',43.7850,87.6060,'approx'],['雅丽雅酒店（红山公园店）',43.8232,87.5942,'confirmed']]},
+    {d:2,n:'乌鲁木齐—赛里木湖',p:[['雅丽雅酒店',43.8232,87.5942,'confirmed'],['安集海大峡谷',44.1760,85.1280,'approx'],['赛里木湖东门',44.5900,81.3780,'approx'],['茜茜栖里民宿',44.5880,81.3820,'confirmed']]},
+    {d:3,n:'赛里木湖—伊宁',p:[['赛里木湖东门',44.5900,81.3780,'approx'],['赛里木湖环湖',44.6010,81.1710,'approx'],['果子沟大桥',44.4370,81.1540,'approx'],['伊宁市中心',43.9169,81.3242,'approx'],['AI建议·六星街外围住宿',43.9270,81.3030,'suggested']]},
+    {d:4,n:'伊宁—伊昭公路—昭苏',p:[['伊宁市中心',43.9169,81.3242,'approx'],['伊昭公路观景段',43.5950,81.1650,'approx'],['昭苏县城',43.1570,81.1300,'approx'],['AI建议·昭苏主干道住宿',43.1560,81.1370,'suggested']]},
+    {d:5,n:'昭苏—夏塔—特克斯',p:[['昭苏县城',43.1570,81.1300,'approx'],['夏塔旅游景区',42.6390,80.8020,'approx'],['特克斯八卦城',43.2140,81.8360,'confirmed'],['AI建议·八卦城外围住宿',43.2200,81.8490,'suggested']]},
+    {d:6,n:'特克斯—那拉提',p:[['特克斯',43.2140,81.8360,'confirmed'],['那拉提游客中心',43.2510,84.0340,'approx'],['空中草原',43.2760,83.9840,'approx'],['AI建议·那拉提镇住宿',43.2560,84.0480,'suggested']]},
+    {d:7,n:'那拉提—巴音布鲁克',p:[['那拉提',43.2510,84.0340,'approx'],['巴音布鲁克游客中心',43.0310,84.1510,'approx'],['九曲十八弯',42.9890,84.1290,'approx'],['AI建议·游客中心附近住宿',43.0340,84.1570,'suggested']]},
+    {d:8,n:'巴音布鲁克—库车',p:[['巴音布鲁克',43.0310,84.1510,'approx'],['独库公路南段',42.3640,83.5200,'approx'],['库车市区',41.7170,82.9630,'approx'],['AI建议·库车老城外围住宿',41.7250,82.9770,'suggested']]},
+    {d:9,n:'库车—温宿—阿克苏—喀什',p:[['库车',41.7170,82.9630,'approx'],['温宿大峡谷',41.6720,80.0550,'approx'],['阿克苏',41.1680,80.2600,'approx'],['喀什古城外围',39.4740,75.9890,'approx'],['AI建议·喀什古城外围住宿',39.4800,75.9960,'suggested']]},
+    {d:10,n:'喀什深度游',p:[['喀什古城东门',39.4740,75.9930,'confirmed'],['艾提尕尔清真寺',39.4714,75.9870,'confirmed'],['喀什牛羊大巴扎',39.5210,75.9300,'approx'],['AI建议·喀什古城外围住宿',39.4800,75.9960,'suggested']]},
+    {d:11,n:'喀什—白沙湖—喀湖—塔县',p:[['喀什',39.4740,75.9890,'approx'],['白沙湖',38.4350,75.2380,'approx'],['喀拉库勒湖',38.4390,75.0500,'approx'],['塔什库尔干县城',37.7720,75.2290,'confirmed'],['AI建议·塔县城区供氧住宿',37.7750,75.2260,'suggested']]},
+    {d:12,n:'塔县环线',p:[['塔什库尔干县城',37.7720,75.2290,'confirmed'],['托格伦夏村',37.8060,75.2570,'approx'],['盘龙古道',37.6000,75.4700,'approx'],['班迪尔蓝湖',37.4620,75.2860,'approx'],['塔什库尔干县城',37.7720,75.2290,'confirmed']]},
+    {d:13,n:'塔县—冰川—喀什',p:[['塔什库尔干',37.7720,75.2290,'confirmed'],['塔合曼湿地',38.0840,75.2880,'approx'],['慕士塔格冰川公园',38.2740,75.1220,'approx'],['奥依塔克红山谷',39.0050,75.4850,'approx'],['喀什',39.4740,75.9890,'approx']]},
+    {d:14,n:'N39沙漠一日游',p:[['喀什',39.4740,75.9890,'approx'],['N39沙漠旅游区',39.0000,77.0000,'approx'],['喀什',39.4740,75.9890,'approx']]},
+    {d:15,n:'喀什机场还车返程',p:[['喀什市区',39.4740,75.9890,'approx'],['喀什机场',39.5430,76.0200,'confirmed']]}
+  ];
+  const GUIDE_DATA={
+    2:{date:'8/22 周六',title:'乌鲁木齐 → 安集海大峡谷 → 赛里木湖',focus:'全天长距离移动，日出前后整备，07:00 前离店。两名司机约每 2 小时轮换；景区停留服从抵达时间。',plan:['06:20 起床、退房并检查油量与胎压','07:00 前从酒店出发，先完成早餐/补给','中途服务区强制休息；安集海大峡谷按开放及道路情况决定停留','傍晚抵达赛里木湖东门，入住茜茜栖里民宿'],stay:'茜茜栖里民宿（赛里木湖东门游客中心店）｜已预订',food:'早餐打包；午餐优先高速出口或县城的拌面/抓饭；晚餐在东门附近解决，避免为网红店绕路。',drone:'峡谷与赛湖均需查看景区公告、临时空域和风速；不在道路边坡、人群或车辆上方起飞。'},
+    3:{date:'8/23 周日',title:'赛里木湖环湖 → 果子沟 → 伊宁',focus:'上午与中午留给赛湖，约 16:00 离开。若环湖或拍摄超时，取消伊宁晚间逛街。',plan:['早餐后进入赛湖，按光线选择东岸/南岸拍摄','环湖期间预留停车、步行与区间交通时间','约 16:00 前离湖，经果子沟前往伊宁','入住后按体力决定是否逛六星街'],stay:'AI住宿建议 · 尚未预订｜六星街外围或伊宁市区东侧，需停车，约 ¥200–300',food:'午餐以景区简餐和自备补给为主；晚餐再安排伊宁特色，如手抓肉、烤肉、面肺子。',drone:'赛湖按景区现场规定；果子沟大桥周边不得在道路、桥梁和车辆上方飞行。'},
+    4:{date:'8/24 周一',title:'伊宁 → 伊昭公路 → 昭苏',focus:'上午伊宁市区，午饭后走伊昭公路；道路管制与天气优先，目标天黑前到昭苏。',plan:['上午选择六星街/喀赞其其一，不塞满','午餐后加满油并采购次日夏塔补给','伊昭公路分段停车拍摄，不在弯道和窄路临停','天黑前抵达昭苏并休息'],stay:'AI住宿建议 · 尚未预订｜昭苏县城主干道附近，需停车和便于次日南下',food:'伊宁午餐可重点选当地家常菜；晚餐在昭苏县城选择出餐快、停车方便的餐馆。',drone:'伊昭公路多山口与复杂气流，只在明确允许且安全的开阔停车区域评估。'},
+    5:{date:'8/25 周二',title:'昭苏 → 夏塔 → 特克斯',focus:'高强度日，夏塔尽量首批入园；必须设置离开景区的硬截止时间，不用疲劳夜驾补进度。',plan:['早起退房，带足水、能量食物与防晒','按预约时段进入夏塔，景交换乘时间计入','徒步强度按当天体感，下午按截止时间离园','前往特克斯入住，晚餐后尽早休息'],stay:'AI住宿建议 · 尚未预订｜八卦城外围、靠次日出城方向，需停车，约 ¥200–300',food:'早餐提前备好；景区内不依赖正餐；晚餐在特克斯吃烤肉/丸子汤等恢复体力。',drone:'夏塔按景区禁限飞公告执行，冰川河谷风强；未经明确允许不飞。'},
+    6:{date:'8/26 周三',title:'特克斯 → 那拉提',focus:'07:00 左右出发；那拉提能游多少取决于抵达时间和预约线路，不承诺把所有线路一次走完。',plan:['早餐后离开特克斯','途中按约 2 小时节奏休息','抵达游客中心后按预约进入草原','入住那拉提镇，补给后休息'],stay:'AI住宿建议 · 尚未预订｜那拉提镇游客中心外，需停车，约 ¥200–300',food:'午餐选择沿途县城拌面；晚餐优先那拉提镇家常新疆菜，避开纯景区高峰店。',drone:'那拉提草原必须以景区当日规定为准；牧群、人群和骑马线路上方不飞。'},
+    7:{date:'8/27 周四',title:'那拉提 → 巴音布鲁克',focus:'为九曲十八弯日落服务。先确认末班区间车和返程排队，再倒推进入景区时间。',plan:['上午离开那拉提，沿途适度停车','抵达巴音布鲁克后先入住/寄存行李','提前进入景区，给区间车和步行留余量','日落后随人流返程，注意保暖'],stay:'AI住宿建议 · 尚未预订｜巴音布鲁克游客中心附近，需停车，约 ¥200–300',food:'午餐尽量在入园前解决；带热水和零食；晚餐可能较晚，提前确认餐厅末单。',drone:'湿地保护区与天鹅活动区域不默认可飞，严格服从景区管理。'},
+    8:{date:'8/28 周五',title:'巴音布鲁克 → 独库公路南段 → 库车',focus:'道路本身就是当天主要景观。出发前复核独库通行、天气和管制，沿线只在正规停车区停靠。',plan:['早起检查官方路况并加油','进入独库南段，两司机轮换','大小龙池等停靠点按时间取舍','傍晚抵达库车，入住并补给'],stay:'AI住宿建议 · 尚未预订｜库车老城外围、靠独库出口方向，需停车，约 ¥200–300',food:'以自带补给和沿途可用餐点为主；抵达库车后吃库车大馕、烤肉或汤饭。',drone:'独库沿线峡谷、道路和设施附近谨慎；不在公路路面、隧道口或车辆上方起飞。'},
+    9:{date:'8/29 周六',title:'库车 → 温宿大峡谷 → 阿克苏 → 喀什',focus:'全程负荷最高的一天，保留原方案但强制轮换和截止时间。温宿大峡谷是否深游由当天入园时间决定。',plan:['尽早离开库车，两司机进入强制轮换','抵达温宿后先确认末班车/闭园时间','超过截止时间则缩短峡谷游览，不压缩休息','经阿克苏前往喀什，疲劳时立即进服务区'],stay:'AI住宿建议 · 尚未预订｜喀什古城外围且方便停车，约 ¥200–300',food:'午餐以快速、停车方便为先；晚餐不预设必须到店时间，抵达喀什后就近解决。',drone:'峡谷须看景区规定和风况；长途驾驶日不为了航拍额外绕路。'},
+    10:{date:'8/30 周日',title:'喀什古城与牛羊大巴扎',focus:'连续长途后的恢复日。步行游古城，牛羊大巴扎按实际营业与交通安排，不追求全覆盖。',plan:['自然醒后进入喀什古城','按当日公布时间决定是否看开城仪式','午后安排茶馆/休息','牛羊大巴扎与夜间美食按体力二选一或顺路组合'],stay:'AI住宿建议 · 尚未预订｜继续住古城外围，需停车，避免频繁搬行李',food:'重点尝试缸子肉、烤包子、鸽子汤、抓饭与当地甜品；热门店排队价值需结合当天节奏。',drone:'古城及人群密集处不安排飞行；清真寺等宗教场所尊重现场规定。'},
+    11:{date:'8/31 周一',title:'喀什 → 白沙湖 → 喀拉库勒湖 → 塔县',focus:'进入帕米尔高原，边境通行证须提前完成。降低运动强度，所有停留服从身体状态。',plan:['早起离开喀什，证件随身','白沙湖短停拍摄','喀拉库勒湖按天气与体感停留','抵达塔县后入住、休息并观察高反'],stay:'AI住宿建议 · 尚未预订｜塔县城区，可停车；供氧不是必需但可作为候选条件',food:'沿途餐饮有限，带水和高能量食物；晚餐选择清淡热食，不饮酒。',drone:'白沙湖、喀湖涉及边境与景区管理，必须现场确认；高海拔大风时不飞。'},
+    12:{date:'9/1 周二',title:'托格伦夏村日出 → 盘龙古道 → 班迪尔蓝湖',focus:'保留原日出与塔县环线顺序。托格伦夏村位置按九六二乡道处理，精确停车点仍需临近复核。',plan:['天亮前出发前往托格伦夏村','日出后返回/接入盘龙古道路段','按道路管制前往班迪尔蓝湖','天黑前返回塔县，避免陌生山路夜驾'],stay:'AI住宿建议 · 尚未预订｜建议与 D11 同一酒店续住，需停车',food:'早餐打包，午餐备干粮；回塔县后吃牦牛肉火锅或家常菜。',drone:'边境县与盘龙古道不默认允许飞；只有现场规则和空域均允许时才起飞。'},
+    13:{date:'9/2 周三',title:'塔县 → 塔合曼湿地 → 慕士塔格冰川 → 奥依塔克 → 喀什',focus:'长距离回程并叠加多个景点，按最晚入场时间逐项止损；冰川游览最耗时。',plan:['早起退房，塔合曼湿地短停','按预约进入慕士塔格冰川公园','若离开冰川过晚则缩短或取消奥依塔克','返回喀什入住'],stay:'AI住宿建议 · 尚未预订｜喀什古城外围、方便停车，约 ¥200–300',food:'景区间以自备补给为主；返回喀什后再安排正式晚餐。',drone:'冰川、高海拔及奥依塔克均按景区现场规定；注意低温导致电池续航下降。'},
+    14:{date:'9/3 周四',title:'N39 塔克拉玛干沙漠一日游',focus:'必须依托合规运营方，确认集合点、车辆、保险、项目内容和返程时间；不自行驾驶租赁城市车辆深入沙漠。',plan:['按运营方要求集合','核对车辆与安全说明','按套餐参加沙漠项目','按约定时间返回喀什并整理行李'],stay:'AI住宿建议 · 尚未预订｜喀什机场方向或便于凌晨还车的位置，需停车',food:'以运营方套餐为准；自备水、电解质饮料和少量能量食物。',drone:'沙漠并非天然可飞区，先获得运营方和空域许可，并避开车辆与游客。'},
+    15:{date:'9/4 周五',title:'喀什机场还车 → 南昌',focus:'07:40 航班。以航司值机截止和租车门店交接时间为基准，倒推离店、加油和还车。',plan:['前一晚完成打包并确认还车点','预留加油/洗车、验车和异地还车交接','进入航站楼办理值机安检','登机返程'],stay:'无住宿｜行程结束',food:'早餐以机场或提前准备为主，不把正餐排进还车前的紧张窗口。',drone:'电池按航空公司和民航规定随身携带、做好绝缘；禁止托运裸露锂电池。'}
+  };
+  const WEATHER_INFO={
+    2:{alt:'乌鲁木齐约 850 米 → 安集海约 1,000 米 → 赛里木湖约 2,073 米',temp:'平原约 17–30℃；赛湖约 8–20℃，风大时体感更低',forecast:'D2 目前处于 15 天趋势边缘，仅作参考'},
+    3:{alt:'赛里木湖约 2,073 米 → 果子沟约 1,300–2,000 米 → 伊宁约 640 米',temp:'赛湖约 8–20℃；伊宁约 16–30℃',forecast:'临近后读取赛湖与伊宁分地点预报'},
+    4:{alt:'伊宁约 640 米 → 伊昭公路山口最高约 3,000 米 → 昭苏约 1,850 米',temp:'伊宁约 16–30℃；山口可能 5–15℃；昭苏约 9–23℃',forecast:'山区需重点看降雨、阵风、能见度和道路管制'},
+    5:{alt:'昭苏约 1,850 米 → 夏塔游客区约 2,000 米以上 → 特克斯约 1,200 米',temp:'昭苏/夏塔约 7–22℃；特克斯约 13–27℃',forecast:'夏塔天气变化快，前 48 小时复核降雨与雷电'},
+    6:{alt:'特克斯约 1,200 米 → 那拉提镇约 1,800 米，草原游览区更高',temp:'约 8–24℃，早晚及阴雨时偏冷',forecast:'重点看降雨、雷电和景区区间车运行'},
+    7:{alt:'那拉提约 1,800 米 → 巴音布鲁克镇约 2,500 米',temp:'巴音布鲁克约 3–18℃，日落后快速降温',forecast:'日落观景需复核云量、降水、风速与体感温度'},
+    8:{alt:'巴音布鲁克约 2,500 米 → 独库山地约 1,000–3,000 米 → 库车约 1,100 米',temp:'高处约 3–15℃；库车约 18–32℃，单日温差跨度大',forecast:'前一晚和出发清晨复核独库天气及交管公告'},
+    9:{alt:'库车约 1,100 米 → 温宿峡谷约 1,300–1,700 米 → 喀什约 1,290 米',temp:'约 18–33℃，峡谷日晒强、阴影区温差明显',forecast:'重点看高温、阵风和峡谷临时关闭信息'},
+    10:{alt:'喀什市区约 1,290 米',temp:'约 17–30℃，白天偏晒、夜间较舒适',forecast:'城区预报临近 7 天后再写入逐时降水与风力'},
+    11:{alt:'喀什约 1,290 米 → 白沙湖/喀湖约 3,300–3,600 米 → 塔县约 3,100 米',temp:'喀什约 16–29℃；高原约 2–18℃，风大体感更低',forecast:'高原天气必须在前 48 小时复核；同时观察自身高反'},
+    12:{alt:'塔县约 3,100 米；盘龙古道沿线约 3,000–4,100 米',temp:'约 0–18℃，日出前和高垭口可能接近冰点',forecast:'日出重点看云量；山路重点看降雪/降雨、结冰与阵风'},
+    13:{alt:'塔县约 3,100 米 → 冰川公园游览区约 4,000 米上下 → 喀什约 1,290 米',temp:'冰川附近可能 -2–12℃；喀什约 16–29℃',forecast:'需同时核对冰川景区开放、风雪和道路情况'},
+    14:{alt:'喀什约 1,290 米 → N39 沙漠区域约 1,100–1,300 米',temp:'约 16–32℃，日晒强且早晚温差大',forecast:'重点看高温、沙尘、阵风及运营方是否调整行程'},
+    15:{alt:'喀什市区/机场约 1,290 米',temp:'清晨约 14–20℃，以临近预报为准',forecast:'返程前一晚查看机场实况、降水和航班动态'}
+  };
+  function renderGuide(day){const box=document.getElementById('dayGuide');if(day===1){box.innerHTML=document.getElementById('day1-detail').innerHTML;return}const g=GUIDE_DATA[day],w=WEATHER_INFO[day];box.innerHTML=`<div class="kicker" style="color:var(--gold)">Day ${String(day).padStart(2,'0')} · Preparation Guide</div><h2>D${day} ${g.title}</h2><p class="lead">${g.date}｜${g.focus}</p><div class="timeline">${g.plan.map((x,i)=>`<div class="slot"><time>${String(i+1).padStart(2,'0')}</time><div><h3>${x}</h3></div></div>`).join('')}</div><div class="detail-grid"><div class="detail-card"><h3>海拔与气温</h3><p><b>路线海拔：</b>${w.alt}</p><p><b>同期常见：</b>${w.temp}</p><p><span class="status-warn">预报：</span>${w.forecast}</p></div><div class="detail-card"><h3>住宿</h3><p>${g.stay}</p></div><div class="detail-card"><h3>餐饮策略</h3><p>${g.food}</p></div><div class="detail-card"><h3>无人机</h3><p>${g.drone}</p></div><div class="detail-card"><h3>当前成熟度</h3><p><span class="status-warn">预备攻略</span>｜海拔为路线级近似值，气温为同期常见范围；景区营业、餐厅营业、酒店、道路和实时天气仍会继续核实。</p></div></div>`}
+  const tabs=document.getElementById('mapTabs');
+  ROUTES.forEach(r=>{const b=document.createElement('button');b.textContent='D'+r.d;b.onclick=()=>showRoute(r.d);b.dataset.d=r.d;tabs.appendChild(b)});
+  const colors={confirmed:'#2e6657',approx:'#c58b3b',suggested:'#a94b3f'};
+  const routeMap=new AMap.Map('routeMap',{viewMode:'2D',zoom:6,center:[81.2,42.2],lang:'zh_cn',mapStyle:'amap://styles/normal'});
+  routeMap.addControl(new AMap.Scale());routeMap.addControl(new AMap.ToolBar({position:{top:'10px',right:'10px'}}));
+  let routeOverlays=[],driving=null,infoWindow=new AMap.InfoWindow({offset:new AMap.Pixel(0,-18)});
+  function clearRoute(){if(driving){driving.clear();driving=null}if(routeOverlays.length){routeMap.remove(routeOverlays);routeOverlays=[]}}
+  function showRoute(day){clearRoute();renderGuide(day);const r=ROUTES.find(x=>x.d===day),stats=document.getElementById('mapStats'),order=r.p.map((p,i)=>`${i+1}. ${p[0]}`).join(' → ');stats.innerHTML=`<strong>D${day} · ${r.n}</strong><div class="route-order">${order}</div><small>正在获取高德驾车里程与时间…</small>`;document.querySelectorAll('#mapTabs button').forEach(b=>b.classList.toggle('active',+b.dataset.d===day));const pts=[];r.p.forEach((p,i)=>{const pos=[p[2],p[1]],pin=document.createElement('div');pin.className='cn-map-pin';pin.style.background=colors[p[3]];pin.textContent=i+1;const m=new AMap.Marker({position:pos,content:pin,offset:new AMap.Pixel(-12,-12),label:{content:p[0],direction:'top'}});m.on('click',()=>{const status=p[3]==='suggested'?'AI住宿建议·未预订':p[3]==='approx'?'大致位置·待精确':'已确认/可靠实体';infoWindow.setContent(`<b>${i+1}. ${p[0]}</b><br>${status}<br><a target="_blank" href="https://uri.amap.com/marker?position=${p[2]},${p[1]}&name=${encodeURIComponent(p[0])}&coordinate=gaode">在高德中查看</a>`);infoWindow.open(routeMap,pos)});routeOverlays.push(m);pts.push(pos)});routeMap.add(routeOverlays);routeMap.setFitView(routeOverlays,false,[45,45,45,45],16);if(pts.length>1){driving=new AMap.Driving({map:routeMap,hideMarkers:true,showTraffic:true,autoFitView:true});const waypoints=pts.slice(1,-1).map(x=>new AMap.LngLat(x[0],x[1]));driving.search(new AMap.LngLat(...pts[0]),new AMap.LngLat(...pts[pts.length-1]),{waypoints},(status,result)=>{if(status==='complete'&&result.routes&&result.routes[0]){const route=result.routes[0],km=(route.distance/1000).toFixed(route.distance>=100000?0:1),mins=Math.round(route.time/60),hours=Math.floor(mins/60),rest=mins%60,timeText=hours?`${hours}小时${rest?rest+'分钟':''}`:`${rest}分钟`;stats.innerHTML=`<strong>D${day} · 约 ${km} 公里 · 纯驾驶约 ${timeText}</strong><div class="route-order">${order}</div><small>顺序按用户原始行程排列；高德沿道路规划。时间不含游玩、休息、排队、加油、天气和临时交通管制。</small>`}else{driving.clear();const fallback=new AMap.Polyline({path:pts,strokeColor:'#2e6657',strokeWeight:4,strokeOpacity:.72,strokeStyle:'dashed'});routeMap.add(fallback);routeOverlays.push(fallback);routeMap.setFitView(routeOverlays);stats.innerHTML=`<strong>D${day} · 高德暂未返回完整驾车统计</strong><div class="route-order">${order}</div><small>当前显示参考连线；顺序仍按用户原始行程排列。</small>`}})}}
+  showRoute(1);
+  </script>
+</body>
+</html>
